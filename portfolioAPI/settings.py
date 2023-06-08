@@ -46,10 +46,12 @@ INSTALLED_APPS = [
 
     # 3rd party
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -132,12 +134,10 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
-
-'DEFAULT_PERMISSION_CLASSES': [
-
-'rest_framework.permissions.AllowAny',
-
-] }
+  'DEFAULT_PERMISSION_CLASSES': [
+    'rest_framework.permissions.AllowAny',
+  ] 
+}
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
