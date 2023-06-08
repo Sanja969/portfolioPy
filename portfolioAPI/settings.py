@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-0tgy=lg4#kg9e4s7#$=gbere5q6ozap24^tu4(#%btqd@bt$mc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sanja42.pythonanywhere.com']
 
 
 # Application definition
@@ -37,14 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     #local
     'projects.apps.ProjectsConfig',
     'blogs.apps.BlogsConfig',
     'quotes.apps.QuotesConfig',
     'articles.apps.ArticlesConfig',
-    
-    # 3rd party 
+
+    # 3rd party
     'rest_framework',
 ]
 
@@ -138,3 +138,9 @@ REST_FRAMEWORK = {
 'rest_framework.permissions.AllowAny',
 
 ] }
+
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+
+STATIC_ROOT = BASE_DIR / 'static'
+MEDIA_ROOT = BASE_DIR / 'media'
